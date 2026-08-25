@@ -202,7 +202,11 @@ class Chunk():
         self.vertex_count = 0
 
     def _getProperChunkCoordinate(self):
-        return (self.position[0]*self.chunkSize, self.position[1]*self.chunkSize, self.position[2]*self.chunkSize)
+        return (
+            self.position[0] * self.chunkSize,
+            self.position[1] * self.chunkSize,
+            self.position[2] * self.chunkSizeHeight,
+        )
 
     def _getBlockRegionForWorker(self, blockIDS):
         x_size, y_size, z_size = blockIDS.shape

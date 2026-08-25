@@ -62,10 +62,10 @@ class CheckerboardBlockWorld:
 
 # Worst-case stress test world: every solid block is isolated by air.
 # This keeps the checkerboard without allocating the full 1024 x 1024 x 128 array.
-#blockWorldIDS = CheckerboardBlockWorld((XBLOCKS, YBLOCKS, ZBLOCKS))
+blockWorldIDS = CheckerboardBlockWorld((XBLOCKS, YBLOCKS, ZBLOCKS))
 
 # casual case scenario world
-blockWorldIDS = np.ones((XBLOCKS, YBLOCKS, ZBLOCKS), dtype=np.uint8)
+#blockWorldIDS = np.ones((XBLOCKS, YBLOCKS, ZBLOCKS), dtype=np.uint8)
 
 
 class ChunkManager():
@@ -249,6 +249,7 @@ class ChunkManager():
             unloads_completed += 1
 
     def makeWorld(self,Showbase):
+        print(int(ZBLOCKS/CHUNKHEIGHT))
         for x in range(int(XBLOCKS/CHUNKSIZE)):
             for y in range(int(YBLOCKS/CHUNKSIZE)):
                 for z in range(int(ZBLOCKS/CHUNKHEIGHT)):

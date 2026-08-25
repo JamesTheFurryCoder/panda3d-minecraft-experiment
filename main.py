@@ -10,7 +10,7 @@ class MyGame(ShowBase):
         super().__init__()
         self.set_background_color(0.5, 0.10, 0.12, 1)
 
-        self.player = NoclipCamera(self, start_pos=(0, -10, 3))
+        self.player = NoclipCamera(self, start_pos=(10, -10, 3))
 
         self.worldManager = ChunkManager(self)
 
